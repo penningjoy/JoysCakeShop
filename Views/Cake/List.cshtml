@@ -1,0 +1,17 @@
+﻿@model CakesListViewModel
+
+@{
+    ViewBag.Title = "Joy's Cake Shop";
+}
+
+<h1> @Model.CurrentCategory</h1>
+
+@foreach (var cake in Model.Cakes)
+{
+    <partial name="~/Views/Shared/_CakeCard.cshtml" model="cake" />
+}
+
+<!-- Adding the order now button at the bottom -->
+<div class="text-center">
+    <a class="btn btn-primary" asp-controller="Contact" asp-action="Index">Order Now</a>
+</div>

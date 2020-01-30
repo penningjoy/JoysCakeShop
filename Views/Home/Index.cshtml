@@ -1,0 +1,20 @@
+﻿@model HomeViewModel
+
+<partial name="_Carousal" />
+
+<h2>Cakes of the week</h2>
+<h4>Our weekly selection - handpicked for you!</h4>
+
+<div class="row">
+
+    @foreach (var cake in Model.CakesoftheWeek)
+    {
+        <partial name="_CakeCard" model="cake" />
+    }
+
+</div>
+
+<!-- Adding the order now button at the bottom -->
+<div class="text-center">
+    <a class="btn btn-danger" style="background-color:red" asp-controller="Contact" asp-action="Index">Order Now</a>
+</div>                
